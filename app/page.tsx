@@ -94,7 +94,7 @@ export default function Home() {
           <label htmlFor="content">오늘 남기고 싶은 한 줄</label>
           <textarea id="content" value={content} onChange={(event) => setContent(event.target.value)} placeholder="작은 발견이나 새로운 배움을 적어 보세요." disabled={saving || !!configError} aria-describedby="privacy count" aria-invalid={length > 500} rows={5} />
           <div className="form-bottom"><span id="count" className={length > 500 ? "over-limit" : "counter"}>{length} / 500자</span><button type="submit" disabled={saving || !!configError || !content.trim() || length > 500}>{saving ? "저장 중…" : "기록 남기기"}<span aria-hidden="true"> ↗</span></button></div>
-          <p id="privacy" className="privacy">실습용 공개 기록입니다. 개인정보는 입력하지 마세요.</p>
+          <p id="privacy" className="privacy"> 개인정보는 입력하지 마세요.</p>
           {saveError && <p className="error" role="alert">{saveError}</p>}
           <p className="notice" role="status">{notice}</p>
         </form>
